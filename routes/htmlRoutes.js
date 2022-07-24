@@ -1,5 +1,8 @@
 // require path
+const path = require('path');
 // rquire router from express - activity 21 and 22, specifically in the routes in activity 22
+const router = require('express').Routher();
+
 
 // set up a route for /notes that responds with the notes.html file
 
