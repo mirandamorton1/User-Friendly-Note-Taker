@@ -1,26 +1,34 @@
 // require router from express - activity 21 and 22, specifically in the routes in activity 22
-const api = require('express').Router();
+// rquire router from express - activity 21 and 22, specifically in the routes in activity 22
+// const router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+const uuid = require('../helpers/uuid');
+
 // require store from the helpers folder 
+const store = require('../helpers/store');
+
 
 // GET ALL THE NOTES //
-api.get('/notes', (req, res) => {
+router.get('/api/notes', (req, res) => {
   store
     // getNotes()
     // then take the notes and return them with res.json
 })
 
 // POST A NEW NOTE //
-api.post('/notes', (req, res) => {
+router.post('/notes', (req, res) => {
   store
     // addNote(req.body)
     // then return note with res.json
 })
 
 // DELETE A NOTE //
-api.delete('notes/:id', (req, res) => {
+router.delete('notes/:id', (req, res) => {
   store
     // removeNote(req.params.id)
     // give a status letting you know it's been deleted
 })
 
-// export your router
+module.exports = router;

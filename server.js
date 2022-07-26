@@ -1,7 +1,6 @@
 // require express
 const express = require('express');
-const path = require('path')
-const notes = require('./db/notes.json')
+const path = require('path'); 
 
 // require your routes - for the api
 const apiRoutes = require('./routes/apiRoutes');
@@ -32,5 +31,5 @@ app.use(express.static('public'));
 
 // start the server on the port - app.listen - reference server.js files from activites in this module
 app.listen(PORT, () =>
-    console.log(`Server is now on port ${PORT}!`)
-    );
+  console.log(`App listening at http://localhost:${PORT} :rocket:`)
+);
