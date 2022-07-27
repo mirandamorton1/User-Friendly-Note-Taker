@@ -21,6 +21,14 @@ class Store {
   getNotes() {
     return this.read().then((notes) => {
       // parse the notes and return them
+      let parsedNotes;
+      try {
+        parsedNotes= [].concat(JSON.parse(notes));
+      }
+      catch(err){
+        parsedNotes=[];
+      }
+      return parsedNotes;
     })
   }
 
@@ -31,7 +39,10 @@ class Store {
     }
 
     const newNote = { title, text, id: uuid() }; // give note an id
-    return this.
+    return this.getNotes()
+    .then((notes) => [...notes, newNote])
+    .then((updatedNotes) => this.write(updatedNotes))
+    .then(() => newNote);
     // get all notes with getNotes()
     // then add new note to them
     // then take the updated set of notes - write them to the file using write()

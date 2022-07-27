@@ -31,5 +31,5 @@ app.use(express.static('public'));
 
 // start the server on the port - app.listen - reference server.js files from activites in this module
 app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} :rocket:`)
+  console.log(`App listening at http://localhost:${PORT}`)
 );

@@ -13,6 +13,10 @@ const store = require('../helpers/store');
 // GET ALL THE NOTES //
 router.get('/api/notes', (req, res) => {
   store
+  .getNotes(req.body)
+  .then((note) => {
+    res.json(note);
+  })
     // getNotes()
     // then take the notes and return them with res.json
 })
@@ -20,6 +24,11 @@ router.get('/api/notes', (req, res) => {
 // POST A NEW NOTE //
 router.post('/notes', (req, res) => {
   store
+  .addNote(req.body)
+  .then((note) => {
+    res.json(note);
+  })
+  .catch((err) => res.status(500).json(err));
     // addNote(req.body)
     // then return note with res.json
 })
