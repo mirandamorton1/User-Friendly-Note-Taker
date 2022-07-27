@@ -11,7 +11,7 @@ const store = require('../helpers/store');
 
 
 // GET ALL THE NOTES //
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
   store
   .getNotes(req.body)
   .then((note) => {
